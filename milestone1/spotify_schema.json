@@ -1,0 +1,44 @@
+{
+  "doc": "User listening history with song details.",
+  "name": "ListeningHistory",
+  "namespace": "music",
+  "type": "record",
+  "fields": [
+    {"name": "user_id", "type": "int"},
+    {
+      "name": "user_location",
+      "type": {
+        "type": "record",
+        "name": "Location",
+        "fields": [
+          {"name": "latitude", "type": "float"},
+          {"name": "longitude", "type": "float"},
+          {"name": "country", "type": "string"},
+          {"name": "city", "type": "string"},
+          {"name": "timezone", "type": "string"}
+        ]
+      }
+    },
+    {"name": "interaction", "type": "string"},
+    {"name": "song_name", "type": "string"},
+    {"name": "artist", "type": "string"},
+    {"name": "genre", "type": "string"},
+    {"name": "year", "type": "int"},
+    {"name": "popularity", "type": "int"},
+    {"name": "danceability", "type": "float"},
+    {"name": "energy", "type": "float"},
+    {"name": "length_seconds", "type": "int"},
+    {
+      "name": "listening_time",
+      "type": {
+        "type": "record",
+        "name": "ListeningPeriod",
+        "fields": [
+          {"name": "start_time", "type": "long"},
+          {"name": "end_time", "type": "long"}
+        ]
+      }
+    },
+    {"name": "personality", "type": "string"}
+  ]
+}
